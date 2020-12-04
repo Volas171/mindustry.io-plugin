@@ -15,3 +15,8 @@ jobs:
         java-version: 14
     - name: Build with Gradle
       run: ./gradlew jar
+    - name: Upload built jar file
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.REPOSITORY_NAME }}
+        path: build/libs/IoPlugin.jar
