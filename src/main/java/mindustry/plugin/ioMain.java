@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 
+import arc.Core;
 import arc.math.Mathf;
 import arc.util.*;
 import arc.util.Timer;
@@ -215,7 +216,8 @@ public class ioMain extends Plugin {
     //register commands that run on the server
     @Override
     public void registerServerCommands(CommandHandler handler){
-
+        handler.removeCommand("exit");
+        handler.register("exit", "exits the server", ioMain::exit);
     }
 
     //cooldown between map votes
@@ -320,6 +322,22 @@ public class ioMain extends Plugin {
             });
         }
 
+    }
+
+    public static void exit(String[] uselessness){
+        exit();
+    }
+
+    public static void exit(){
+        if(playerDataHashMap != null){
+            playerDataHashMap.forEach(Funcs::setJedisData);
+        }
+        if(api != null){
+            api.shutdownNow();
+        }
+        Vars.net.dispose();
+        Core.app.exit();
+        System.exit(0);
     }
 
 }

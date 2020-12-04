@@ -124,6 +124,44 @@ public class ModeratorCommands {
             }
         });
 
+        handler.<Context>register("playersinfo", "Check the information about all players on the server.", (args, ctx) -> {
+            EmbedBuilder eb = new EmbedBuilder();
+            eb.setColor(Pals.progress);
+            eb.setTitle(":satellite: **players online: **" + Groups.player.size());
+
+            StringBuilder pi = new StringBuilder();
+            int pn = 1;
+            for(Player p : Groups.player){
+                if (!p.admin) {
+                    pi
+                            .append("**")
+                            .append(pn + "•")
+                            .append("** `")
+                            .append(escapeCharacters(p.name))
+                            .append("` : ")
+                            .append(p.con.address)
+                            .append(" : ")
+                            .append(p.uuid())
+                            .append("\n");
+                } else {
+                    pi
+                            .append("**")
+                            .append(pn + "•")
+                            .append("** `")
+                            .append(escapeCharacters(p.name))
+                            .append("`")
+                            .append("\n");
+
+
+                }
+
+                pn++;
+            }
+            eb.setDescription(pi);
+            ctx.sendEmbed(eb);
+
+        });
+
         handler.<Context>register("lookup", "<uuid|name>", "Lookup the specified player by uuid or name (name search only works when player is online)", (args, ctx) -> {
             EmbedBuilder eb = new EmbedBuilder();
             Administration.PlayerInfo info;

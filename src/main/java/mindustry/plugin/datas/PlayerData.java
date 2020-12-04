@@ -10,7 +10,7 @@ public class PlayerData{
     public String tag;
     public Tile tapTile;
     public boolean inspector;
-    public boolean canInteract = false;
+    public boolean canInteract = true;
 
     public BulletType bt;
     public float sclVelocity;

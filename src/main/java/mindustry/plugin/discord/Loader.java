@@ -19,10 +19,6 @@ import org.json.JSONTokener;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-
 public class Loader {
     public static JedisPool pool;
     public static Gson gson = new Gson();
@@ -47,7 +43,6 @@ public class Loader {
     public static int minRank = 0;
 
     public static TextChannel getTextChannel(String id){
-        Log.info("id: " + id);
         return server.getTextChannelById(id);
     }
 

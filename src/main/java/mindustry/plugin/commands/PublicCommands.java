@@ -134,8 +134,18 @@ public class PublicCommands {
             eb.setTitle(":satellite: **players online: **" + Groups.player.size());
 
             StringBuilder s = new StringBuilder();
+            int pn = 1;
             for(Player p : Groups.player){
-                s.append(p.name).append("\n");
+                s
+                        .append("**")
+                        .append(pn + "•")
+                        .append("** `")
+                        .append(escapeCharacters(p.name))
+                        .append("`")
+                        .append(" : ")
+                        .append(p.id)
+                        .append("\n");
+                pn++;
             }
             eb.setDescription(s);
             ctx.sendEmbed(eb);
