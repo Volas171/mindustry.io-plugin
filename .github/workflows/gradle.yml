@@ -15,3 +15,12 @@ jobs:
         java-version: 14
     - name: Build with Gradle
       run: ./gradlew jar
+    - name: Change wrapper permissions
+      run: chmod +x ./gradlew
+    - name: Build plugin jar
+      run: ./gradlew deploy -PgHash="$GITHUB_SHA" -PgBranch="${GITHUB_REF##*/}" -PgRepoOwner="$GITHUB_ACTOR" -PgRepo="$GITHUB_REPOSITORY" -Pbuilder="Github-CI" -PbuilderID="$GITHUB_RUN_ID"
+    - name: Upload built jar file
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.REPOSITORY_NAME }}
+        path: Desktop/build/libs/IoPlugin.jar
