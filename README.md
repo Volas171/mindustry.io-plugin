@@ -11,4 +11,8 @@ https://github.com/J-VdS/DiscordPlugin~~
 *no longer applies due to the whole thing being reworked*
 
 
-Notice: this is a outdated version since they stopped making it opensource     *hmm i wonder why*
+###Notice:
+ this is a outdated version since they stopped making it opensource     *hmm i wonder why*
+
+
+anyways , for precompiled binaries check actions tab 
