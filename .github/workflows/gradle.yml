@@ -18,5 +18,4 @@ jobs:
     - name: Upload built jar file
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.REPOSITORY_NAME }}
         path: build/libs/ioPlugin.jar
