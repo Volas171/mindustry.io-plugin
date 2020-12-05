@@ -15,8 +15,8 @@ https://github.com/J-VdS/DiscordPlugin~~
  this is a outdated version since they stopped making it opensource     *hmm i wonder why*
 
 
-anyways , for precompiled binaries check actions tab 
+Anyways , for precompiled binaries check actions tab.
 
 
 ### Setup:
-you will need a settings.json at mod directory ,the content on the .json is unknown but if you understand enough you can make your own by reading the code at ioMain.java
+you will need a settings.json at mod directory ,the content on the .json is unknown but if you understand enough you can make your own by reading the code.
