@@ -2,6 +2,8 @@
 
 The plugin's general purpose is to prevent griefers and make moderation easier. If you wish to help developing the plugin, feel free!
 
+###Deprecated as of 2020/12/5
+
 ### Credits
 
 
